@@ -86,7 +86,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
+function DashboardContent(props) {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -121,7 +121,7 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              {props.title}
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -163,7 +163,7 @@ function DashboardContent() {
           }}
         >
           <Toolbar />
-           <BasicAlerts type="warning">Página atualizada!</BasicAlerts>
+          <BasicAlerts type="warning">Página atualizada!</BasicAlerts>
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Chart */}
@@ -176,12 +176,12 @@ function DashboardContent() {
                     height: 250,
                   }}
                 >
-                 
+
                   <Chart />
-                  <DiscreteSlider xs={12} md={8} lg={9}  sx={{margin:2, p:20, width:1}}  />
+                  <DiscreteSlider xs={12} md={8} lg={9} sx={{ margin: 2, p: 20, width: 1 }} />
                 </Paper>
               </Grid>
-              
+
               {/* Recent Deposits */}
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
@@ -192,7 +192,7 @@ function DashboardContent() {
                     height: 240,
                   }}
                 >
-                  <Deposits/>
+                  <Deposits />
                 </Paper>
               </Grid>
               {/* Recent Orders */}
@@ -201,8 +201,8 @@ function DashboardContent() {
                   <Orders />
                 </Paper>
               </Grid>
-                            {/* Dialog */}
-                            <Grid item xs={12}>
+              {/* Dialog */}
+              <Grid item xs={12}>
                 <Paper
                   sx={{
                     p: 2,
@@ -211,7 +211,7 @@ function DashboardContent() {
                     height: 150,
                   }}
                 >
-                  <SimpleDialogDemo/>
+                  <SimpleDialogDemo />
                 </Paper>
               </Grid>
             </Grid>
@@ -219,11 +219,11 @@ function DashboardContent() {
           </Container>
         </Box>
       </Box>
-      
+
     </ThemeProvider>
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
+export default function Dashboard(props) {
+  return <DashboardContent title={props.title} />;
 }
