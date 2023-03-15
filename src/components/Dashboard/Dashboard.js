@@ -21,9 +21,9 @@ import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
-import DiscreteSlider from './../Slider'
-import BasicAlerts from '../Alert';
-import SimpleDialogDemo from '../Dialog';
+import DiscreteSlider from './Slider/Slider'
+import BasicAlerts from '../Alert/Alert';
+import SimpleDialogDemo from '../Dialog/Dialog';
 
 function Copyright(props) {
   return (
