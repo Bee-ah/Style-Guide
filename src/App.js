@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
      
-      <Dashboard />
+      <Dashboard title="Meu Painel de Controle"/>
     </div>
   );
 }
